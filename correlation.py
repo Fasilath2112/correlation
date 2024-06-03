@@ -46,7 +46,9 @@ def diagnose(filename):
     journal = load_journal(filename)  # Load the journal data from the specified file
     correlations = compute_correlations(journal)  # Compute the correlations for all events
     max_event = max(correlations, key=correlations.get)  # Find the event with the highest positive correlation
+    print('maximum value :',correlations[max_event])
     min_event = min(correlations, key=correlations.get)  # Find the event with the highest negative correlation
+    print('minimum value :',correlations[min_event])
     return max_event, min_event  # Return the most positively and negatively correlated events
 
 if __name__ == "__main__":
